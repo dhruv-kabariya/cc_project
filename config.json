@@ -1,0 +1,25 @@
+{
+    "boot-source": {
+        "kernel_image_path": "Downloads/vmlinux.bin",
+        "boot_args": "ro console=ttyS0 noapic reboot=k panic=1 pci=off nomodules random.trust_cpu=on ip=169.254.0.21::169.254.0.22:255.255.255.252::eth0:off"
+    },
+    "drives": [
+        {
+            "drive_id": "rootfs",
+            "path_on_host": "Downloads/bionic.rootfs.ext4",
+            "is_root_device": true,
+            "is_read_only": false
+        }
+    ],
+    "network-interfaces": [
+        {
+            "iface_id": "eth0",
+            "guest_mac": "AA:FC:00:00:00:01",
+            "host_dev_name": "tapvm1"
+        }
+    ],
+    "machine-config": {
+        "vcpu_count": 3,
+        "mem_size_mib": 1024
+    }
+}
